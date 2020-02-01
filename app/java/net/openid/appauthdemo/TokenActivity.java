@@ -280,6 +280,7 @@ public class TokenActivity extends AppCompatActivity {
     private void performTokenRequest(
             TokenRequest request,
             AuthorizationService.TokenResponseCallback callback) {
+
         ClientAuthentication clientAuthentication;
         try {
             clientAuthentication = mStateManager.getCurrent().getClientAuthentication();

@@ -1,11 +1,11 @@
 {
-  "client_id": "",
-  "redirect_uri": "net.openid.appauthdemo:/oauth2redirect",
+  "client_id": "launcher",
+  "redirect_uri": "uemx://launcher",
   "authorization_scope": "openid email profile",
   "discovery_uri": "",
-  "authorization_endpoint_uri": "",
-  "token_endpoint_uri": "",
+  "authorization_endpoint_uri": "https://10.31.199.102:8443/api/iam/sso/nationsky/authorize",
+  "token_endpoint_uri": "https://10.31.199.102:8443/api/iam/sso/nationsky/token",
   "registration_endpoint_uri": "",
-  "user_info_endpoint_uri": "",
-  "https_required": true
+  "user_info_endpoint_uri": "https://110.31.199.102:8443/api/iam/sso/nationsky/userinfo",
+  "https_required": false
 }

@@ -17,6 +17,7 @@ package net.openid.appauthdemo;
 import android.annotation.TargetApi;
 import android.app.PendingIntent;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
@@ -146,6 +147,28 @@ public final class LoginActivity extends AppCompatActivity {
         mExecutor.submit(this::initializeAppAuth);
     }
 
+    @Override
+    protected void onResume(){
+        super.onResume();
+        Intent intent = getIntent();
+        Log.i(TAG, "Intent is not null: ");
+        if (intent != null) {
+            String intentAction = intent.getAction();
+            Log.i(TAG, "intentAction: " + intentAction);
+            Uri intentData = intent.getData();
+            if(null != intentData) {
+                Log.i(TAG, intentData.getScheme());
+                Log.i(TAG, intentData.getHost());
+                Log.i(TAG, intentData.getPath());
+                Log.i(TAG, intentData.getQuery());
+                String token = intentData.getQueryParameter("token");
+                String seq = intentData.getQueryParameter("seq");
+                Log.i(TAG, "initIntentData: " + token);
+                Log.i(TAG, "initIntentData: " + seq);
+            }
+        }
+
+    }
     @Override
     protected void onStart() {
         super.onStart();
